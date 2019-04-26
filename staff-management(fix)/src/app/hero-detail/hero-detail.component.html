@@ -1,0 +1,44 @@
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}<!-- span trong html la dung de dinh dang 1 doi tuong rieng trong dong --></div>
+  <div><span>age: </span>{{hero.age}}<!-- span trong html la dung de dinh dang 1 doi tuong rieng trong dong --></div>
+  <div><span>gender: </span>{{hero.gender}}<!-- span trong html la dung de dinh dang 1 doi tuong rieng trong dong --></div>
+
+  <button (click)="toggle()" id="bt">Sua
+  </button>
+
+  <ng-container *ngIf="show">
+    <h2>Sua doi thong tin cua {{hero.name}}</h2>
+    <div>
+      <!-- placeholder dung de hien thi tam thoi khi o trong khong co gi -->
+      <label>
+        Age:
+        <input [(ngModel)]="hero.age" placeholder="age" />
+      </label>
+    </div>
+
+    <div>
+      <label>
+        GioiTinh:<br>
+        <body>
+          <form action="choosegender()">
+            <input type="radio" name="gender" value="Nam" checked> Nam<br>
+            <input type="radio" name="gender" value="Nu"> Nu<br>
+          </form>
+        </body>
+      </label>
+
+    </div>
+
+    <div>
+      <!-- placeholder dung de hien thi tam thoi khi o trong khong co gi -->
+      <label>
+        Name:
+        <input [(ngModel)]="hero.name" placeholder="name" />
+      </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+
+  </ng-container>
+</div>

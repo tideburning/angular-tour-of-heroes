@@ -1,0 +1,31 @@
+<br />
+<div>
+  <label></label>
+  <label>
+    Hero name:
+    <input #heroName />
+    <br />
+  </label>
+  <br />
+  <label>
+    Age:
+    <input #heroAge />
+    <br />
+  </label>
+  <br />
+  <label>
+    GioiTinh:
+    <select>
+      <option value="Nam">Nam</option>
+      <option value="Nu">Nu</option>
+    </select>
+  </label>
+  <br />
+  <br />
+
+  <!-- (click) passes input value to add() and then clears the input-->
+  <button (click)="add(heroName.value); heroName.value=''">
+    Them nhan vien
+  </button>
+</div>
+
